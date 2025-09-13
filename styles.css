@@ -257,6 +257,27 @@ ul {
   transform: translateY(-1px);
 }
 
+.card-cta-button {
+  display: inline-block;
+  background: #f5b638;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.card-cta-button:hover {
+  background: #e6a532;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(245, 182, 56, 0.3);
+}
+
 /* Contact Section */
 .contact-section {
   padding: 4rem 0;
@@ -1638,28 +1659,6 @@ button {
   position: relative;
   background: rgba(17, 24, 39, 0.9);
   backdrop-filter: blur(8px);
-}
-
-.pricing-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    45deg,
-    rgba(224, 0, 0, 0.02) 0%,
-    transparent 50%,
-    rgba(226, 45, 45, 0.02) 100%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 1;
-}
-
-.pricing-card:hover::before {
-  opacity: 1;
 }
 
 .pricing-card:hover {

@@ -185,32 +185,37 @@ window.addEventListener("load", () => {
 
 
 // Add hover effect to pricing cards
-const pricingCards = document.querySelectorAll(".pricing-card")
+const pricingCards = document.querySelectorAll(".pricing-card");
 pricingCards.forEach((card) => {
-  card.addEventListener("mouseenter", function () {
+  const orderButton = card.querySelector('.order-now-btn');
+
+  card.addEventListener("mouseenter", function (e) {
+    // Do not trigger card hover effect if hovering over the button
+    if (orderButton && e.target === orderButton) return;
+
     if (!this.classList.contains("featured")) {
       pricingCards.forEach((otherCard) => {
         if (!otherCard.classList.contains("featured")) {
-          otherCard.style.transform = "scale(0.98)"
-          otherCard.style.opacity = "0.9"
+          otherCard.style.transform = "scale(0.98)";
+          otherCard.style.opacity = "0.9";
         }
-      })
-      this.style.transform = "translateY(-10px)"
-      this.style.opacity = "1"
+      });
+      this.style.transform = "translateY(-10px)";
+      this.style.opacity = "1";
     }
-  })
+  });
 
   card.addEventListener("mouseleave", function () {
     if (!this.classList.contains("featured")) {
       pricingCards.forEach((otherCard) => {
         if (!otherCard.classList.contains("featured")) {
-          otherCard.style.transform = "scale(1)"
-          otherCard.style.opacity = "1"
+          otherCard.style.transform = "scale(1)";
+          otherCard.style.opacity = "1";
         }
-      })
+      });
     }
-  })
-})
+  });
+});
 
 // FAQ Accordion
 document.addEventListener("click", (e) => {
