@@ -9,6 +9,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap"
       rel="stylesheet"
@@ -240,19 +242,23 @@
       
       
       <!-- Best Package Section -->
-      <section class="best-package-section">
+      <section class="best-package-section" id="packages">
         <div class="container">
-          <h2 class="section-title">أنسب باقة لك</h2>
-          <p class="section-subtitle">اختر الباقة التي تناسب احتياجاتك</p>
+          <div data-aos="fade-up">
+            <h2 class="section-title">أنسب باقة لك</h2>
+            <p class="section-subtitle">اختر الباقة التي تناسب احتياجاتك</p>
+          </div>
           
           <div class="package-recommendations">
             <!-- Recommendation 1 -->
-            <div class="recommendation-card" data-aos="fade-up">
-              <div class="recommendation-icon">
+            <div class="recommendation-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="recommendation-icon" data-aos="zoom-in" data-aos-delay="300">
                 <i class="fas fa-futbol"></i>
               </div>
-              <h3 class="recommendation-question">بتابع كورة فقط؟</h3>
-              <p class="recommendation-answer">باقة هولك المثالية لمحبي المباريات</p>
+              <div data-aos="fade-up" data-aos-delay="200">
+                <h3 class="recommendation-question">بتابع كورة فقط؟</h3>
+                <p class="recommendation-answer">باقة هولك المثالية لمحبي المباريات</p>
+              </div>
               <div class="recommendation-features" style="text-align: right; direction: rtl;">
                 <p><span style="margin-right: 8px;">جميع القنوات الرياضية</span> <i class="fas fa-tv" style="color: #4e73df;"></i></p>
                 <p><span style="margin-right: 8px;">بث مباشر للمباريات</span> <i class="fas fa-play-circle" style="color: #4e73df;"></i></p>
@@ -262,12 +268,14 @@
             </div>
             
             <!-- Recommendation 2 -->
-            <div class="recommendation-card featured" data-aos="fade-up" data-aos-delay="100">
-              <div class="recommendation-icon">
+            <div class="recommendation-card featured" data-aos="fade-up" data-aos-delay="200">
+              <div class="recommendation-icon" data-aos="zoom-in" data-aos-delay="400">
                 <i class="fas fa-users"></i>
               </div>
-              <h3 class="recommendation-question">عائلة كبيرة + أطفال؟</h3>
-              <p class="recommendation-answer">باقة IPTV Smarters الشاملة للعائلة</p>
+              <div data-aos="fade-up" data-aos-delay="300">
+                <h3 class="recommendation-question">عائلة كبيرة + أطفال؟</h3>
+                <p class="recommendation-answer">باقة IPTV Smarters الشاملة للعائلة</p>
+              </div>
               <div class="recommendation-features" style="text-align: right; direction: rtl;">
                 <p><span style="margin-right: 8px;">قنوات أطفال متخصصة</span> <i class="fas fa-child" style="color: #4e73df;"></i></p>
                 <p><span style="margin-right: 8px;">أفلام ومسلسلات عائلية</span> <i class="fas fa-film" style="color: #4e73df;"></i></p>
@@ -277,12 +285,14 @@
             </div>
             
             <!-- Recommendation 3 -->
-            <div class="recommendation-card" data-aos="fade-up" data-aos-delay="200">
-              <div class="recommendation-icon">
+            <div class="recommendation-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="recommendation-icon" data-aos="zoom-in" data-aos-delay="500">
                 <i class="fas fa-tags"></i>
               </div>
-              <h3 class="recommendation-question">بتدور على أرخص سعر؟</h3>
-              <p class="recommendation-answer">باقة ألفا بريميوم الاقتصادية</p>
+              <div data-aos="fade-up" data-aos-delay="400">
+                <h3 class="recommendation-question">بتدور على أرخص سعر؟</h3>
+                <p class="recommendation-answer">باقة ألفا بريميوم الاقتصادية</p>
+              </div>
               <div class="recommendation-features" style="text-align: right; direction: rtl;">
                 <p><span style="margin-right: 8px;">أسعار تنافسية</span> <i class="fas fa-tag" style="color: #4e73df;"></i></p>
                 <p><span style="margin-right: 8px;">تشكيلة واسعة من القنوات</span> <i class="fas fa-list" style="color: #4e73df;"></i></p>
@@ -380,7 +390,7 @@
           </div>
           
           <div class="reasons-grid">
-            <div class="reason-card" data-aos="fade-right">
+            <div class="reason-card" data-aos="fade-up" data-aos-delay="50">
               <div class="reason-icon">
                 <i class="fas fa-tag"></i>
               </div>
@@ -388,9 +398,12 @@
                 <h3>أرخص سعر مقابل أعلى جودة</h3>
                 <p>نقدم لك أفضل الأسعار مع الحفاظ على أعلى معايير الجودة في البث والخدمة</p>
               </div>
+              <div class="reason-hover">
+                <i class="fas fa-arrow-left"></i>
+              </div>
             </div>
             
-            <div class="reason-card" data-aos="fade-left">
+            <div class="reason-card" data-aos="fade-up" data-aos-delay="100">
               <div class="reason-icon">
                 <i class="fas fa-wifi"></i>
               </div>
@@ -398,9 +411,12 @@
                 <h3>بدون تقطيع، بدون VPN</h3>
                 <p>استمتع بمشاهدة سلسة بدون تقطيع أو حاجة لبرامج VPN</p>
               </div>
+              <div class="reason-hover">
+                <i class="fas fa-arrow-left"></i>
+              </div>
             </div>
             
-            <div class="reason-card" data-aos="fade-right" data-aos-delay="100">
+            <div class="reason-card" data-aos="fade-up" data-aos-delay="150">
               <div class="reason-icon">
                 <i class="fas fa-shield-alt"></i>
               </div>
@@ -408,9 +424,12 @@
                 <h3>اشتراك مضمون أو استرجاع المبلغ</h3>
                 <p>نضمن لك رضاك التام أو نعيد لك أموالك خلال 24 ساعة</p>
               </div>
+              <div class="reason-hover">
+                <i class="fas fa-arrow-left"></i>
+              </div>
             </div>
             
-            <div class="reason-card" data-aos="fade-left" data-aos-delay="100">
+            <div class="reason-card" data-aos="fade-up" data-aos-delay="200">
               <div class="reason-icon">
                 <i class="fab fa-whatsapp"></i>
               </div>
@@ -418,9 +437,12 @@
                 <h3>دعم فوري بالواتساب</h3>
                 <p>فريق دعم فني متاح على مدار الساعة للرد على استفساراتك</p>
               </div>
+              <div class="reason-hover">
+                <i class="fas fa-arrow-left"></i>
+              </div>
             </div>
             
-            <div class="reason-card" data-aos="fade-right" data-aos-delay="200">
+            <div class="reason-card" data-aos="fade-up" data-aos-delay="250">
               <div class="reason-icon">
                 <i class="fas fa-sync-alt"></i>
               </div>
@@ -428,9 +450,12 @@
                 <h3>تحديثات مستمرة</h3>
                 <p>نقوم بتحديث المحتوى والقنوات بشكل دوري لضمان حصولك على الأفضل دائمًا</p>
               </div>
+              <div class="reason-hover">
+                <i class="fas fa-arrow-left"></i>
+              </div>
             </div>
             
-            <div class="reason-card" data-aos="fade-left" data-aos-delay="200">
+            <div class="reason-card" data-aos="fade-up" data-aos-delay="300">
               <div class="reason-icon">
                 <i class="fas fa-tv"></i>
               </div>
@@ -438,11 +463,16 @@
                 <h3>متوافق مع جميع الأجهزة</h3>
                 <p>شاهد محتواك المفضل على أي جهاز تفضله</p>
               </div>
+              <div class="reason-hover">
+                <i class="fas fa-arrow-left"></i>
+              </div>
             </div>
           </div>
           
-          <div class="cta-container" data-aos="fade-up" data-aos-delay="300">
-            <a href="#hulk-player" class="cta-button">اطلب تجربة مجانية الان</a>
+          <div class="cta-container" data-aos="fade-up" data-aos-delay="400">
+            <a href="#hulk-player" class="cta-button pulse-animation">
+              <span>اطلب تجربة مجانية الان</span>
+            </a>
           </div>
         </div>
       </section>
@@ -779,6 +809,20 @@
       <i class="fas fa-chevron-up"></i>
     </button>
 
+    <!-- AOS Initialization -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+    <script>
+      // Initialize AOS with custom settings
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: true,
+          mirror: true,
+          offset: 100
+        });
+      });
+    </script>
   </body>
 </html>
