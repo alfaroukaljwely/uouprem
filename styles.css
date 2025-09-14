@@ -423,7 +423,7 @@ ul {
 }
 
 .recommendation-button:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -498,13 +498,17 @@ ul {
 }
 
 .reason-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(78, 115, 223, 0.1) 0%, rgba(34, 74, 190, 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(78, 115, 223, 0.1) 0%,
+    rgba(34, 74, 190, 0.1) 100%
+  );
   z-index: -1;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -715,14 +719,18 @@ ul {
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    background: linear-gradient(135deg, rgba(245, 182, 56, 0.15) 0%, rgba(230, 126, 34, 0.15) 100%) !important;
+    background: linear-gradient(
+      135deg,
+      rgba(245, 182, 56, 0.15) 0%,
+      rgba(230, 126, 34, 0.15) 100%
+    ) !important;
   }
 
   .feature-title {
     font-size: 1.3rem;
     margin: 1rem 0 0.75rem;
   }
-  
+
   .feature-description {
     margin: 0 auto;
     max-width: 90%;
@@ -794,13 +802,13 @@ ul {
     min-height: auto !important;
     padding: 0 !important;
     margin: 0 !important;
-}
+  }
 
   .hero-banner {
     height: auto !important;
     margin: 0 !important;
     padding: 0 !important;
-}
+  }
 
   .hero-banner-image {
     width: 100% !important;
@@ -1121,6 +1129,7 @@ ul {
 
 .card-cta-button {
   display: inline-block;
+  width: 100%;
   background: #f5b638;
   color: white;
   padding: 0.75rem 1.5rem;
@@ -1132,6 +1141,7 @@ ul {
   margin-top: 1rem;
   border: none;
   cursor: pointer;
+  align-self: center;
 }
 
 .card-cta-button:hover {
@@ -1275,7 +1285,6 @@ ul {
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
 }
 
 .footer-content {
@@ -1324,7 +1333,6 @@ ul {
 .payments-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
 }
 
 .payments-strip {
@@ -2795,35 +2803,150 @@ button {
 }
 
 /* Mini Subscription Card */
-.mini-subscription-card {
-  background: rgba(30, 25, 31, 0.9);
-  border: 1px solid rgba(245, 182, 56, 0.2);
-  border-radius: 12px;
-  padding: 1rem;
+.pricing-card.mini-subscription-card {
+  background: linear-gradient(145deg, rgba(28, 22, 25, 0.95), rgba(42, 31, 36, 0.95));
+  border: 2px solid rgba(245, 182, 56, 0.4);
+  border-radius: 16px;
+  padding: 1.2rem 0.8rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  min-height: 200px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  margin: 0;
+  min-height: 260px;
+  max-width: 85%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  transform: scale(0.95);
 }
 
-.mini-subscription-card .card-icon {
+.pricing-card.mini-subscription-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(245,182,56,0.15) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 1;
+}
+
+.pricing-card.mini-subscription-card:hover {
+  transform: translateY(-5px) scale(0.97);
+  border-color: #f5b638;
+  box-shadow: 0 15px 35px rgba(245, 182, 56, 0.3);
+}
+
+.pricing-card.mini-subscription-card:hover::before {
+  opacity: 1;
+}
+
+.pricing-card.mini-subscription-card .card-icon {
   width: 70px;
   height: 70px;
-  margin: 0 auto 1rem;
+  background: rgba(28, 22, 25, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(245, 182, 56, 0.15);
   border-radius: 50%;
-  padding: 12px;
+  padding: 10px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(245, 182, 56, 0.4);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-card.mini-subscription-card .card-icon::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px dashed rgba(245, 182, 56, 0.6);
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.pricing-card.mini-subscription-card:hover .card-icon::after {
+  opacity: 1;
+  animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.pricing-card.mini-subscription-card h3 {
+  color: #f5b638;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.pricing-card.mini-subscription-card .card-description {
+  color: #a0a0a0;
+  font-size: 0.85rem;
+  margin: 0 0 1rem;
+  line-height: 1.5;
+  max-width: 90%;
+  z-index: 2;
+}
+
+.pricing-card.mini-subscription-card .card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #f5b638, #e67e22);
+  color: #1c1619;
+  padding: 0.65rem 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
   transition: all 0.3s ease;
-  border: 2px solid rgba(245, 182, 56, 0.2);
+  margin-top: 0.5rem;
+  border: none;
+  width: 85%;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+}
+
+.pricing-card.mini-subscription-card .card-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(230, 126, 34, 0.4);
+}
+
+.pricing-card.mini-subscription-card .card-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #e67e22, #f5b638);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.pricing-card.mini-subscription-card .card-cta:hover::before {
+  opacity: 1;
 }
 
 .mini-subscription-card .card-icon img {
