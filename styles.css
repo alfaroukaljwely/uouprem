@@ -12,7 +12,7 @@
 .ticker-content {
   display: flex;
   white-space: nowrap;
-  animation: ticker 20s linear infinite;
+  animation: ticker 25s linear infinite;
   padding: 0 1rem;
 }
 
@@ -29,12 +29,20 @@
   font-size: 1rem;
 }
 
-@keyframes ticker {
+/* @keyframes ticker {
   0% {
-    transform: translateX(0);
+    transform: translateX(100%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(0);
+  }
+} */
+@keyframes ticker {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
 
@@ -2804,7 +2812,11 @@ button {
 
 /* Mini Subscription Card */
 .pricing-card.mini-subscription-card {
-  background: linear-gradient(145deg, rgba(28, 22, 25, 0.95), rgba(42, 31, 36, 0.95));
+  background: linear-gradient(
+    145deg,
+    rgba(28, 22, 25, 0.95),
+    rgba(42, 31, 36, 0.95)
+  );
   border: 2px solid rgba(245, 182, 56, 0.4);
   border-radius: 16px;
   padding: 1.2rem 0.8rem;
@@ -2825,13 +2837,17 @@ button {
 }
 
 .pricing-card.mini-subscription-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(245,182,56,0.15) 0%, transparent 65%);
+  background: radial-gradient(
+    circle,
+    rgba(245, 182, 56, 0.15) 0%,
+    transparent 65%
+  );
   opacity: 0;
   transition: opacity 0.6s ease;
   z-index: 1;
@@ -2865,7 +2881,7 @@ button {
 }
 
 .pricing-card.mini-subscription-card .card-icon::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -4px;
   left: -4px;
@@ -2884,8 +2900,12 @@ button {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .pricing-card.mini-subscription-card h3 {
@@ -2933,7 +2953,7 @@ button {
 }
 
 .pricing-card.mini-subscription-card .card-cta::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
